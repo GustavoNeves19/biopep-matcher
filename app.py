@@ -4,7 +4,7 @@ import pandas as pd
 # Carrega os dados
 @st.cache_data
 def carregar_dados(caminho_arquivo):
-    df = pd.read_excel(caminho_arquivo)
+    df = pd.read_csv(caminho_arquivo)
     df['Monois. mass'] = pd.to_numeric(df['Monois. mass'], errors='coerce')
     return df.dropna(inplace=True)
 
