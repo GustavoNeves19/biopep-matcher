@@ -5,13 +5,13 @@ import pandas as pd
 @st.cache_data
 def carregar_dados(caminho_arquivo):
     df = pd.read_csv(caminho_arquivo)
-    df['Monois. mass'] = pd.to_numeric(df['Monois. mass'], errors='coerce')
+    df['moins.mass'] = pd.to_numeric(df['moins.mass'], errors='coerce')
     return df.dropna(inplace=True)
 
 # Calcula os matches
 def encontrar_candidatas(df, mz_origem, tolerancia=1.0):
     df = df.copy()
-    df['Delta'] = (df['Monois. mass'] - mz_origem).abs()
+    df['Delta'] = (df['moins.mass'] - mz_origem).abs()
     df_filtrado = df[df['Delta'] <= tolerancia].sort_values(by='Delta')
     return df_filtrado
 
