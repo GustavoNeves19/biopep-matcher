@@ -24,7 +24,7 @@ st.write("Insira um valor de **m/z** para encontrar possíveis moléculas candid
 mz_input = st.number_input("Digite o valor m/z:", min_value=100.0, max_value=5000.0, step=0.1)
 
 # Carregamento dos dados
-df_biopep = carregar_dados("./data/biopep_corrigido.xlsx")
+df_biopep = carregar_dados("data/biopep_completo.csv")
 
 # Quando o botão for clicado
 if st.button("Buscar candidatas"):
