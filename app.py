@@ -6,7 +6,8 @@ import pandas as pd
 def carregar_dados(caminho_arquivo):
     df = pd.read_csv(caminho_arquivo)
     df['moins.mass'] = pd.to_numeric(df['moins.mass'], errors='coerce')
-    return df.dropna(inplace=True)
+    df.dropna(inplace=True)
+    return df
 
 # Calcula os matches
 def encontrar_candidatas(df, mz_origem, tolerancia=1.0):
